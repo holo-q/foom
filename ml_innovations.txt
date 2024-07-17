@@ -1,0 +1,86 @@
+1. Gradient Teleportation: ∇θL = E[∇θlog p(x|θ) · f(x)] → ∇θL = E[Φ(x,θ) · f(x)]
+2. Quantum-Inspired Classical Attention: A(Q,K,V) = softmax(QK^T/√d)V → A(Q,K,V) = ∫ψQ*(x)ψK(x)V(x)dx
+3. Topological Layer Normalization: y = γ(x-μ)/√(σ²+ε) + β → y = H*(x-μ)/√(σ²+ε) + β, H: homology group
+4. Manifold-Preserving Pooling: MaxPool(x) → MP(x) = ∫M K(x,y)f(y)dy, M: data manifold
+5. Information Bottleneck Training: min I(X;T) - βI(T;Y) → min ∫p(t|x)log(p(t|x)/p(t))dx - β∫p(y|t)log(p(y|t)/p(y))dt
+6. Neural ODE with Lie Group Symmetry: dz/dt = f(z,t,θ) → dz/dt = ∑αi(t)Xi(z), Xi: Lie algebra basis
+7. Riemannian Adam: θt+1 = θt - α√(vt+ε)^(-1)mt → θt+1 = expθt(-α√(G^(-1)vt+ε)^(-1)mt), G: metric tensor
+8. Adversarial Robustness via Diffeomorphic Augmentation: x' = x + ε → x' = φ(x), φ ∈ Diff(M)
+9. Continual Learning with Synaptic Intelligence: L += c∑(θi-θi*)²/max(ωi,ξ) → L += c∫(θ(x)-θ*(x))²/max(ω(x),ξ)dx
+10. Few-Shot Learning via Meta-Metric Learning: d(x,y) = ||f(x)-f(y)||² → d(x,y) = ∫M g(f(x),f(y))dV, g: learned metric
+
+11. Self-Supervised Pretraining with Topological Data Analysis: L = LCE + λLTDA, LTDA = ∑βkLk, Lk: k-th Betti number loss
+12. Contrastive Learning in Hyperbolic Space: L = -log(exp(s(x,x+)/τ)/∑exp(s(x,x-)/τ)) → L = -log(exp(dH(f(x),f(x+))/τ)/∑exp(dH(f(x),f(x-))/τ))
+13. Curriculum Learning via Entropy Regularization: L += λH(p(y|x)) → L += λ∫H(p(y|x,t))dt, t: curriculum time
+14. Mixture of Experts with Gumbel-Softmax: y = ∑softmax(g(x))fi(x) → y = ∑Gumbel-Softmax(g(x))fi(x)
+15. Conditional Computation via Reinforced Gates: z = σ(Wx+b) → z = σ(Wx+b) * (a>0), a ~ π(a|x)
+16. Sparse-Dense Hybrid Networks: y = Wx → y = (S○W)x + Dx, S: sparse, D: low-rank
+17. Low-Rank Tensor Decomposition for Efficient Inference: W ≈ ∑r a_i ⊗ b_i → W ≈ CP-decomp(T), T: higher-order tensor
+18. Probabilistic Model Pruning: p(w|D) ∝ p(D|w)p(w) → p(S,w|D) ∝ p(D|S,w)p(w|S)p(S), S: structure
+19. Variational Inference with Normalizing Flows: qφ(z|x) → qφ(z|x) = f(ε;φ), ε ~ p(ε), f: invertible
+20. Energy-Based GAN with Introspective Learning: D(x) = -log∑exp(-E(x)) → D(x) = -log∑exp(-E(G(z))), z ~ p(z)
+
+21. Diffusion Model Acceleration via Learned ODE Solvers: ref[2], ref[6] → dx/dt = f(x,t), f: learned neural ODE
+22. Score-Based Generative Refinement with Langevin Dynamics: ref[20] → dx/dt = f(x,t) + √(2/β(t))dW, W: Wiener process
+23. Neural Scaling Law Discovery via Meta-Learning: ref[10], L(θ) = Σ Li(θ) → L(θ,α) = Σ Li(θ,αi), α: scaling parameters
+24. Dataset Distillation with Wasserstein Gradient Flows: ref[5], ref[21] → ∂ρ/∂t = -∇·(ρ∇(δF/δρ)), F: functional
+25. Synthetic Data Generation via Generative Schrödinger Bridge: ref[22] → ∂ψ/∂t = (-∇·(bψ) + Δψ/2), b: score function
+26. Active Learning with Information Gain Heuristics: ref[5] → I(y;θ|x,D) = H(y|x,D) - Ey~p(y|x,θ)[H(θ|x,y,D)]
+27. Contextual Bandit Algorithms with Thompson Sampling: ref[15] → at ~ p(a|xt,θt), θt ~ p(θ|Dt-1)
+28. Model-Based RL with Latent Dynamics: ref[6], s' = f(s,a) → z' = f(z,a), s = g(z)
+29. Off-Policy Learning Stability via Distributional RL: ref[18] → Zt+1 = r + γZt', Z: return distribution
+30. Exploration-Exploitation Trade-off with Information-Directed Sampling: ref[26], ref[27] → at = argmax E[I(θ;yt|xt,at,D)]/sqrt(E[regret(at)])
+
+31. Inverse Reinforcement Learning via Adversarial Imitation: ref[20], ref[28] → minθ maxψ E[D(s,a)] - E[log(D(s,π(s)))]
+32. Multi-Agent Cooperation with Opponent Modeling: ref[27], ref[31] → Qi(s,a) = ri(s,a) + γ Σ πj(aj|s) Q(s',a'), j≠i
+33. Federated Learning with Secure Aggregation: ref[16], W = Σ niWi/N → W = SecureSum(niWi)/SecureSum(ni)
+34. Split Learning with Homomorphic Encryption: ref[33], y = f2(f1(x)) → y = f2(Enc(f1(x)))
+35. Differential Privacy via Rényi Divergence: ref[5], ε-DP → (α,ε)-RDP: Dα(P(M(D))||P(M(D'))) ≤ ε
+36. Neural Architecture Search with Evolutionary Strategies: ref[14], ref[23] → θt+1 = θt + α·(1/σ)·Σ Δθi·R(θi)
+37. Hyperparameter Optimization with Bayesian Optimization: ref[36] → αt = argmax EI(α), EI: expected improvement
+38. Explainable AI via Integrated Gradients: ref[1] → IG(x) = (x-x')·∫ ∇f(x' + α(x-x'))dα
+39. Robustness Enhancement with Adversarial Training: ref[8], min E[max L(θ,x+δ)] → min E[ρ-adversarial(L(θ,·))(x)]
+40. Fairness-Preserving Transformations via Optimal Transport: ref[24] → T#μ = ν, T: fair map, μ,ν: distributions
+
+41. Privacy-Guaranteeing Training with Secure Multi-Party Computation: ref[33], ref[34] → [x] = Share(x), y = f([x])
+42. Energy-Efficient Inference with Mixed-Precision Quantization: ref[16] → W = α·clip(round(W/α), -2^(b-1), 2^(b-1)-1)
+43. Hardware-Aware Neural Architecture Design: ref[36], ref[42] → L += λ·Σ bi·ci, bi: bitwidth, ci: compute cost
+44. Neuromorphic Computing Inspiration: Spike-Timing-Dependent Plasticity: ref[9] → Δw = A+exp(-Δt/τ+) if Δt>0 else A-exp(Δt/τ-)
+45. Brain-Like Learning Rules with Local Hebbian Updates: ref[1], ref[44] → Δwij = η(aiaj - wij)
+46. Information Bottleneck Exploitation in Deep Networks: ref[5], ref[12] → L = H(Y|T) + βI(X;T)
+47. Intrinsic Dimension Reduction via Random Projections: ref[4], ref[16] → x' = Rx, R: random matrix
+48. Manifold Learning with Diffusion Maps: ref[4], ref[21] → K = exp(-||xi-xj||²/ε), [Φ]ij = Kij/(DiDj)^(1/2)
+49. Topological Data Analysis for Feature Extraction: ref[11], ref[48] → L = Σ βk·pers(Hk(X)), pers: persistence
+50. Geometric Deep Learning on Non-Euclidean Domains: ref[6], ref[48] → Δf = div(∇f) → Δgf = divg(∇gf)
+
+51. Graph Neural Network Innovations with Attention-Guided Aggregation: ref[2], ref[50] → h'i = Σj αij·Θ·hj, αij = softmax(a^T[Θhi||Θhj])
+52. Attention Mechanism Refinements with Multi-Head Interaction: ref[2], ref[51] → MH(Q,K,V) = Concat(head1,...,headh)WO
+53. Memory-Augmented Architectures with Differentiable Neural Computers: ref[15], ref[52] → yt = W[ht,rt], rt = Σ wi,tMt[i]
+54. Neural Ordinary Differential Equations for Continuous-Depth Models: ref[6], ref[21] → dz(t)/dt = f(z(t),t,θ)
+55. Implicit Layer Discoveries with Deep Equilibrium Models: ref[54] → z* = f(z*,x), y = g(z*)
+56. Neural Tangent Kernel Insights for Infinite-Width Networks: ref[7], ref[54] → Θ(x,x') = E[∇θf(x,θ)^T∇θf(x',θ)]
+57. Infinite Width Limit Explorations via Mean Field Theory: ref[56] → ∂tθ(x,t) = -E[δL/δf · ∇θf(x,θt)]
+58. Lottery Ticket Hypothesis Extensions to Continuous Sparsification: ref[16], ref[57] → ∂tθ(x,t) = -η·m(t)·∇L, m(t): mask
+59. Double Descent Phenomenon Explanations with Phase Transitions: ref[23], ref[57] → E[L] ~ (n-d)^(-α) + (d/n)^β, d: param dim
+60. Adversarial Robustness Techniques with Input Gradient Regularization: ref[8], ref[39] → L += λ·E[||∇xf(x)||²]
+
+61. Continual Learning Strategies with Orthogonal Gradient Descent: ref[9], ref[58] → θt+1 = θt - η·(I - WW^T)∇L
+62. Few-Shot Learning Protocols with Prototypical Networks: ref[10], ref[51] → d(x,ck) = ||fφ(x) - ck||², ck: prototype
+63. Zero-Shot Generalization Tricks via Semantic Embeddings: ref[12], ref[62] → y = argmax s(f(x),e(y)), e: class embedding
+64. Self-Supervised Pretraining Paradigms with Contrastive Predictive Coding: ref[11], ref[46] → L = -log(exp(z^Tk+)/Σexp(z^Tki))
+65. Contrastive Learning Formulations in Hyperbolic Space: ref[12], ref[50] → d(x,y) = acosh(1 + 2||x-y||²/((1-||x||²)(1-||y||²)))
+66. Curriculum Learning Schedules with Competence-Based Sampling: ref[13], ref[27] → p(i) ∝ exp(-(c(i)-μ)²/(2σ²)), c: competence
+67. Mixture of Experts Architectures with Hierarchical Routing: ref[14], ref[52] → y = ΣiΣj gij·fij(x), gij: hierarchical gates
+68. Conditional Computation Schemes with Adaptive Inference Graphs: ref[15], ref[54] → z(t+1) = z(t) + f(z(t),x)·δ(t), δ: halting
+69. Sparsity-Inducing Regularizations with ℓ0 Approximations: ref[16], ref[60] → L += λ·Σ(1-exp(-α|wi|))
+70. Low-Rank Approximations with Tensor Ring Decomposition: ref[17], ref[50] → W ≈ Tr(G1,G2,...,Gd), Gi: core tensors
+
+71. Tensor Decomposition Techniques for Efficient Neural Compression: ref[17], ref[70] → W ≈ CP(λ,A,B,C), CP: CANDECOMP/PARAFAC
+72. Probabilistic Model Innovations with Neural Processes: ref[18], ref[54] → z ~ p(z|x1:n,y1:n), y* ~ p(y*|x*,z)
+73. Variational Inference Acceleration with Normalizing Flows: ref[19], ref[54] → z = f(ε), ε ~ p(ε), f: invertible
+74. Normalizing Flow Transformations with Continuous Normalizing Flows: ref[19], ref[73] → z(t) = z(0) + ∫0t f(z(s),s)ds
+75. Energy-Based Model Formulations with Contrastive Divergence: ref[20], ref[64] → L = E[E(x)] - E[E(x-)], x- ~ p(x-|x)
+76. Generative Adversarial Network Stabilizations with Spectral Normalization: ref[20], ref[60] → W = W / σ(W)
+77. Diffusion Model Accelerations with Denoising Diffusion Implicit Models: ref[21], ref[74] → x0 = fθ(xt,t)
+78. Score-Based Generative Refinements with Annealed Langevin Dynamics: ref[22], ref[77] → xt+1 = xt + ε∇logp(xt) + √(2ε)z
+79. Neural Scaling Law Discoveries with Intrinsic Dimension Estimation: ref
